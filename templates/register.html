@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration | SHAYAK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="/" class="logo">SHAYAK<span>.</span></a>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/#mission">Our Mission</a>
+        <a href="/#how-it-works">How It Works</a>
+    </nav>
+</header>
+
+<main class="join">
+    <p class="eyebrow">BE SOMEONE'S REASON TO HOPE</p>
+    <h2>Become a SHAYAK Volunteer</h2>
+    <p>Tell us about yourself and how you would like to contribute.</p>
+
+    
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+        <div class="flash-message {{ category }}" role="status">
+            <strong>
+                {% if category == "success" %}
+                    ✓ Registration Successful
+                {% else %}
+                    ⚠ Please Check
+                {% endif %}
+            </strong>
+            <p>{{ message }}</p>
+        </div>
+    {% endfor %}
+{% endwith %}
+
+
+    <form method="POST" action="{{ url_for('register') }}"
+          style="max-width: 550px; margin: 30px auto; text-align: left;">
+
+        <label for="full_name">Full name *</label>
+        <input id="full_name" name="full_name" required maxlength="100"
+               autocomplete="name" style="width: 100%; padding: 12px; margin: 6px 0 18px;">
+
+        <label for="email">Email address *</label>
+        <input id="email" name="email" type="email" required maxlength="254"
+               autocomplete="email" style="width: 100%; padding: 12px; margin: 6px 0 18px;">
+
+        <label for="phone">Phone number *</label>
+        <input id="phone" name="phone" type="tel" required maxlength="20"
+               autocomplete="tel" style="width: 100%; padding: 12px; margin: 6px 0 18px;">
+
+        <label for="area">City / locality *</label>
+        <input id="area" name="area" required maxlength="150"
+               placeholder="e.g. Assandh, Karnal"
+               style="width: 100%; padding: 12px; margin: 6px 0 18px;">
+
+        <label for="skills">Skills you can offer *</label>
+        <select id="skills" name="skills" required
+                style="width: 100%; padding: 12px; margin: 6px 0 18px;">
+            <option value="">Select a skill</option>
+            <option value="First aid trained">First aid trained</option>
+            <option value="Blood donation coordination">Blood donation coordination</option>
+            <option value="Disaster relief">Disaster relief</option>
+            <option value="Transport or logistics">Transport or logistics</option>
+            <option value="General volunteering">General volunteering</option>
+        </select>
+
+        <label for="availability">Availability *</label>
+        <select id="availability" name="availability" required
+                style="width: 100%; padding: 12px; margin: 6px 0 18px;">
+            <option value="">Select availability</option>
+            <option value="Any time when available">Any time when available</option>
+            <option value="Daytime">Daytime</option>
+            <option value="Evenings">Evenings</option>
+            <option value="Weekends">Weekends</option>
+        </select>
+
+        <label for="affiliation">Organization (optional)</label>
+        <input id="affiliation" name="affiliation" maxlength="150"
+               placeholder="NSS, NCC, Scouts and Guides, etc."
+               style="width: 100%; padding: 12px; margin: 6px 0 18px;">
+
+        <p style="font-size: 13px; color: #64766e; margin-bottom: 18px;">
+            This prototype stores your submitted details locally.
+            Registration does not mean your identity or skills have been verified.
+            Do not submit real personal information during testing.
+        </p>
+
+        <button type="submit">Submit Volunteer Registration</button>
+    </form>
+</main>
+
+<footer>
+    <a href="/" class="logo">SHAYAK<span>.</span></a>
+    <p>The Right Help. The Right Place. The Right Time.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAYAK | Community Emergency Network</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="/" class="logo">SHAYAK<span>.</span></a>
+
+    
+<nav>
+    <a href="#mission">Our Mission</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#join">Volunteer</a>
+
+    <a href="{{ url_for('admin_login') }}">
+        Admin Login
+    </a>
+</nav>
+
+
+    <a href="#join" class="nav-button">Join the Mission</a>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">COMMUNITY • COURAGE • COMPASSION</p>
+
+            <h1>When every second matters,<br>
+                <span>we stand together.</span>
+            </h1>
+
+            <p class="description">
+                Connecting verified community volunteers with people
+                who need help during accidents, emergencies and disasters.
+                One community. One purpose. A better chance at saving lives.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#join" class="primary-button">Become a Volunteer →</a>
+                <a href="#how-it-works" class="secondary-button">Discover SHAYAK</a>
+            </div>
+
+            <p class="note">
+                Built on the spirit of selfless service. No payment required.
+            </p>
+        </div>
+
+        <div class="hero-visual">
+            <div class="visual-icon">✚</div>
+            <p class="visual-label">HELP IS CLOSER THAN YOU THINK</p>
+
+            <div class="visual-card">
+                <span class="status-dot"></span>
+                <div>
+                    <strong>Community-powered response</strong>
+                    <p>People ready to help, connected by purpose.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission" id="mission">
+        <p class="eyebrow">OUR PURPOSE</p>
+        <h2>Humanity should never be out of reach.</h2>
+        <p>
+            SHAYAK aims to connect willing, appropriately verified volunteers
+            with nearby emergency needs through location-based coordination.
+            Professional emergency services remain the first priority.
+        </p>
+    </section>
+
+    <section class="services" id="how-it-works">
+        <p class="eyebrow">HOW SHAYAK HELPS</p>
+        <h2>One platform. Many ways to help.</h2>
+
+        <div class="service-grid">
+            <article class="service-card">
+                <span class="service-icon">🚑</span>
+                <h3>Accident Response</h3>
+                <p>Help coordinate nearby assistance during road accidents.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">🩹</span>
+                <h3>First Aid</h3>
+                <p>Identify willing volunteers with relevant first-aid training.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">🩸</span>
+                <h3>Blood Coordination</h3>
+                <p>Help coordinate blood-donor requests with suitable safeguards.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-icon">🤝</span>
+                <h3>Disaster Support</h3>
+                <p>Connect communities with volunteers during local crises.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="join" id="join">
+        <p class="eyebrow">YOUR COMMUNITY NEEDS YOU</p>
+        <h2>You don't need a reward to make a difference.</h2>
+        <p>
+            Students, professionals, homemakers and members of service
+            organisations can all contribute their time and skills.
+        </p>
+        <a href="{{ url_for('register') }}" class="primary-button">
+        Become a Volunteer →
+        </a>
+    </section>
+</main>
+
+<footer>
+    <a href="/" class="logo">SHAYAK<span>.</span></a>
+    <p>The Right Help. The Right Place. The Right Time.</p>
+    <p class="disclaimer">
+        SHAYAK is a developing community-support prototype, not an emergency service.
+        In an emergency in India, call 112.
+    </p>
+</footer>
+
+</body>
+</html>
