@@ -1,0 +1,4 @@
+full_name,email,phone,area,skills,availability,affiliation,verification_status
+Demo Volunteer One,volunteer1@example.com,0000000001,North Zone,First Aid,Weekends,Demo Organization,Pending verification
+Demo Volunteer Two,volunteer2@example.com,0000000002,South Zone,Food Distribution,Evenings,Community Group,Verified
+Demo Volunteer Three,volunteer3@example.com,0000000003,East Zone,Shelter Support,Weekdays,,Rejected
